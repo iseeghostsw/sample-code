@@ -2,7 +2,7 @@ const { db } = require('../../common/dbs/db');
 
 export const findScheduledNotificatinos = async ({ from, to }) => {
   try {
-    const query = db('scheduled_notifications as sn')
+    const query = db('scheduled_pushes as sn')
       .leftJoin('users as u', 'u.id', 'sn.user_id')
       .leftJoin('user_config as uc', 'uc.user_id', 'u.id')
       .leftJoin('user_devices as ud', 'ud.user_id', 'u.id')
@@ -26,7 +26,7 @@ export const findScheduledNotificatinos = async ({ from, to }) => {
 
 export const updatePushes = async (ids, updateData) => {
   try {
-    await db('scheduled_notifications').whereIn('id', ids).update(updateData);
+    await db('scheduled_pushes').whereIn('id', ids).update(updateData);
   } catch (e) {
     console.log(`Error in updatePushes: ${e.message}`);
   }
