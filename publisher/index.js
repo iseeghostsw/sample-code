@@ -3,7 +3,7 @@ const dayjs = require('dayjs');
 
 const { getTimeRange } = require('../common/utils/time');
 const { redis } = require('../common/dbs/redis');
-const { findScheduledNotificatinos, updatePushes } = require('./repositories/scheduled-pushes.repository');
+const { findScheduledPushes, updatePushes } = require('./repositories/scheduled-pushes.repository');
 const { preparePushData } = require('./services/push-data.service');
 const { REDIS_CHANNEL } = require('../constants');
 
@@ -29,7 +29,7 @@ const checkPushConditions = ({ systemName, data }) => {
       minutesInterval: 5,
     });
 
-    const scheduledPushesQuery = findScheduledNotificatinos({
+    const scheduledPushesQuery = findScheduledPushes({
       from,
       to,
     });
