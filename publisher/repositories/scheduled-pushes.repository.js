@@ -15,6 +15,7 @@ export const findScheduledPushes = async ({ from, to }) => {
         'sn.systemName',
         'u.locale',
         'u.isSubscribed',
+        'u.createAtUnix',
         'group_concat(distinct ud.pushToken) as pushTokens',
       ]);
 
