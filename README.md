@@ -1,3 +1,3 @@
 # sample-code
 
-test
+Scheduled pushes publisher for notifications microservice

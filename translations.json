@@ -1,0 +1,10 @@
+{
+    "en": {
+      "welcome_title": "Hi",
+      "welcome_body": "Hi body"
+    },
+    "es": {
+      "welcome_title": "Aloha",
+      "welcome_body": "Aloha body"
+    }
+}
